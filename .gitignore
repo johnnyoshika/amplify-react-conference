@@ -37,3 +37,6 @@ amplifyconfiguration.json
 amplify-build-config.json
 amplify-gradle-config.json
 amplifyxc.config
+
+#amplify's mock resolvers while mock server is running
+amplify/backend/api/AmplifyReactConf/resolvers/*
