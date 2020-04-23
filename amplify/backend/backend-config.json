@@ -16,5 +16,13 @@
 				}
 			}
 		}
+	},
+	"auth": {
+		"amplifyreactconf8db0610e": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
 	}
 }
