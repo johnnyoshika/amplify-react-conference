@@ -10,11 +10,11 @@
     "@types/node": "^12.12.37",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "@types/react-router-dom": "^5.1.4",
     "aws-amplify": "^3.0.8",
     "aws-amplify-react": "^4.1.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5",
     "uuid": "^7.0.3"
