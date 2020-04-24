@@ -269,6 +269,21 @@ export type DeleteCommentMutation = {
   } | null,
 };
 
+export type GetCoinsQueryVariables = {
+  limit?: number | null,
+  start?: number | null,
+};
+
+export type GetCoinsQuery = {
+  getCoins:  Array< {
+    __typename: "Coin",
+    id: string,
+    name: string,
+    symbol: string,
+    price_usd: string,
+  } | null > | null,
+};
+
 export type GetTalkQueryVariables = {
   id: string,
 };
