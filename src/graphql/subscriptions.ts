@@ -38,3 +38,30 @@ export const onDeleteTalk = /* GraphQL */ `
     }
   }
 `;
+export const onCreateComment = /* GraphQL */ `
+  subscription OnCreateComment($createdBy: String!) {
+    onCreateComment(createdBy: $createdBy) {
+      id
+      message
+      createdBy
+    }
+  }
+`;
+export const onUpdateComment = /* GraphQL */ `
+  subscription OnUpdateComment($createdBy: String!) {
+    onUpdateComment(createdBy: $createdBy) {
+      id
+      message
+      createdBy
+    }
+  }
+`;
+export const onDeleteComment = /* GraphQL */ `
+  subscription OnDeleteComment($createdBy: String!) {
+    onDeleteComment(createdBy: $createdBy) {
+      id
+      message
+      createdBy
+    }
+  }
+`;

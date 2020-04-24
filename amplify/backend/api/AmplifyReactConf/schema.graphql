@@ -6,3 +6,12 @@ type Talk @model {
   speakerName: String!
   speakerBio: String!
 }
+
+type Comment @model @auth(rules: [
+  { allow: owner, ownerField: "createdBy", operations: [create, update, delete]},
+  { allow: private, operations: [read] }
+  ]) {
+  id: ID!
+  message: String
+  createdBy: String
+}

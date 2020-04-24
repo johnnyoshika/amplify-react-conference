@@ -33,3 +33,28 @@ export const listTalks = /* GraphQL */ `
     }
   }
 `;
+export const getComment = /* GraphQL */ `
+  query GetComment($id: ID!) {
+    getComment(id: $id) {
+      id
+      message
+      createdBy
+    }
+  }
+`;
+export const listComments = /* GraphQL */ `
+  query ListComments(
+    $filter: ModelCommentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        message
+        createdBy
+      }
+      nextToken
+    }
+  }
+`;
