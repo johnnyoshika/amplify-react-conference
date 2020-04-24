@@ -17,6 +17,9 @@ Amplify.configure(config);
 
 const httpLink = new HttpLink({
   uri: 'http://192.168.1.26:20002/graphql',
+  headers: {
+    Authorization: '',
+  },
 });
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
