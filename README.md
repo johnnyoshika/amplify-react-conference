@@ -9,6 +9,9 @@ https://us-west-2.console.aws.amazon.com/amplify/home?region=us-west-2#/
 
 URL: https://master.d26v5hqf1tamjr.amplifyapp.com
 
+## 2020-04-23 Update
+
+Auth seems to be broken. Amplify no longer triggers the login flow in our app when a user is not logged in. This is the case in dev (using `amplify mock`) and production. It was working fine before, so I'm not sure when or how this broke.
 
 ## Known problems
 When mocking using `amplify mock`, this query (which uses a Lambda GraphQL resolver) doesn't work:
