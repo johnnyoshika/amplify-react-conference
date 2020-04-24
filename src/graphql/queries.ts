@@ -11,6 +11,9 @@ export const getTalk = /* GraphQL */ `
       description
       speakerName
       speakerBio
+      comments {
+        nextToken
+      }
     }
   }
 `;
@@ -39,6 +42,14 @@ export const getComment = /* GraphQL */ `
       id
       message
       createdBy
+      talk {
+        id
+        clientId
+        name
+        description
+        speakerName
+        speakerBio
+      }
     }
   }
 `;

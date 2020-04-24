@@ -95,6 +95,7 @@ export type CreateCommentInput = {
   id?: string | null,
   message?: string | null,
   createdBy?: string | null,
+  commentTalkId?: string | null,
 };
 
 export type ModelCommentConditionInput = {
@@ -108,6 +109,7 @@ export type UpdateCommentInput = {
   id: string,
   message?: string | null,
   createdBy?: string | null,
+  commentTalkId?: string | null,
 };
 
 export type DeleteCommentInput = {
@@ -149,6 +151,10 @@ export type CreateTalkMutation = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -166,6 +172,10 @@ export type UpdateTalkMutation = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -183,6 +193,10 @@ export type DeleteTalkMutation = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -197,6 +211,15 @@ export type CreateCommentMutation = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };
 
@@ -211,6 +234,15 @@ export type UpdateCommentMutation = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };
 
@@ -225,6 +257,15 @@ export type DeleteCommentMutation = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };
 
@@ -241,6 +282,10 @@ export type GetTalkQuery = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -276,6 +321,15 @@ export type GetCommentQuery = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };
 
@@ -307,6 +361,10 @@ export type OnCreateTalkSubscription = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -319,6 +377,10 @@ export type OnUpdateTalkSubscription = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -331,6 +393,10 @@ export type OnDeleteTalkSubscription = {
     description: string,
     speakerName: string,
     speakerBio: string,
+    comments:  {
+      __typename: "ModelCommentConnection",
+      nextToken: string | null,
+    } | null,
   } | null,
 };
 
@@ -344,6 +410,15 @@ export type OnCreateCommentSubscription = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };
 
@@ -357,6 +432,15 @@ export type OnUpdateCommentSubscription = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };
 
@@ -370,5 +454,14 @@ export type OnDeleteCommentSubscription = {
     id: string,
     message: string | null,
     createdBy: string | null,
+    talk:  {
+      __typename: "Talk",
+      id: string,
+      clientId: string | null,
+      name: string,
+      description: string,
+      speakerName: string,
+      speakerBio: string,
+    } | null,
   } | null,
 };

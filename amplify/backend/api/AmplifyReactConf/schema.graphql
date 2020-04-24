@@ -5,6 +5,7 @@ type Talk @model {
   description: String!
   speakerName: String!
   speakerBio: String!
+  comments: [Comment] @connection(name: "TalkComments")
 }
 
 type Comment @model @auth(rules: [
@@ -14,4 +15,5 @@ type Comment @model @auth(rules: [
   id: ID!
   message: String
   createdBy: String
+  talk: Talk @connection(name: "TalkComments")
 }

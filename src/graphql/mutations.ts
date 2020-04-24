@@ -14,6 +14,9 @@ export const createTalk = /* GraphQL */ `
       description
       speakerName
       speakerBio
+      comments {
+        nextToken
+      }
     }
   }
 `;
@@ -29,6 +32,9 @@ export const updateTalk = /* GraphQL */ `
       description
       speakerName
       speakerBio
+      comments {
+        nextToken
+      }
     }
   }
 `;
@@ -44,6 +50,9 @@ export const deleteTalk = /* GraphQL */ `
       description
       speakerName
       speakerBio
+      comments {
+        nextToken
+      }
     }
   }
 `;
@@ -56,6 +65,14 @@ export const createComment = /* GraphQL */ `
       id
       message
       createdBy
+      talk {
+        id
+        clientId
+        name
+        description
+        speakerName
+        speakerBio
+      }
     }
   }
 `;
@@ -68,6 +85,14 @@ export const updateComment = /* GraphQL */ `
       id
       message
       createdBy
+      talk {
+        id
+        clientId
+        name
+        description
+        speakerName
+        speakerBio
+      }
     }
   }
 `;
@@ -80,6 +105,14 @@ export const deleteComment = /* GraphQL */ `
       id
       message
       createdBy
+      talk {
+        id
+        clientId
+        name
+        description
+        speakerName
+        speakerBio
+      }
     }
   }
 `;
